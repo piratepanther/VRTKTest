@@ -8,6 +8,7 @@ public class SingleGunControl : MonoBehaviour
 {
     private VRTK_ControllerEvents controller;
 
+    
     private void OnEnable()
     {
         controller = GetComponentInParent<VRTK_ControllerEvents>();

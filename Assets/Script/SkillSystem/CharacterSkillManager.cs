@@ -25,16 +25,24 @@ public class CharacterSkillManager : MonoBehaviour
     private void InitSkill(SkillData skillData)
     {
 
-       skillData.skillPrefab = Resources.Load<GameObject>("Skill/" + skillData.prefabName);
+        /*
+         资源映射表
+         * 资源名称                        资源路径
+         * BaseMeleeAttackSkill             Skill/BaseMeleeAttackSkill
+        
+         */
+
+
+        skillData.skillPrefab = Resources.Load<GameObject>("Skill/" + skillData.prefabName);
 
        skillData.owner = gameObject;
 
     }
-    /// <summary>
-    /// 技能释放条件:冷却  法力
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
+     //<summary>
+     //技能释放条件:冷却  法力
+     //</summary>
+     //<param name="id"></param>
+     //<returns></returns>
     public SkillData PrepareSkill(int id)
     {
         //查找技能数据,判断条件,返回数据
