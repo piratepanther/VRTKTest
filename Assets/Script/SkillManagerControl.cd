@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SkillSystem.Common.SkillData">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAIABAAiAAEJACIAKAEAAEEARAAQkJAAACAAAA=</HashCode>
+      <FileName>Assets\Resources\Common\SkillData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterSkillManager">
+    <Position X="4.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACAAAAAAAAAAAAAEIAAACEAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Script\SkillSystem\CharacterSkillManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterStatus">
+    <Position X="4.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAIAQJAAAAAAAAAAAECAgAI=</HashCode>
+      <FileName>Assets\Character\CharacterStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterInputController">
+    <Position X="1.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Character\CharacterInputController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
