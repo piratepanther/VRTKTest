@@ -1,2 +1,2 @@
 # VRTKTest
-VRTK dailytest for own
+VRTK dailytest for own use
