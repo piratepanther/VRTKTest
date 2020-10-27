@@ -2,8 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-    namespace common
+namespace Common
 {
+    /*
+     * 使用方式：
+     * 1.频繁使用的物体，通过对象池创建、回收、销毁
+     * 2.需要通过对象池创建的物体，如需每次创建时执行，则让相应脚本实现IResetable接口
+     * 
+     */
+
+
+    //用于外部调用时使用
+        public interface IResetable
+        {
+            void OnReset();
+        }
+
 	public class GameObjectPool : MonoSingleton<GameObjectPool>
 	{
         private Dictionary<string,List<GameObject>> cache;
@@ -46,6 +60,14 @@ using System.Collections.Generic;
             go.transform.position = pos;
             go.transform.rotation = rotate;
             go.SetActive(true);
+            //设置目标点
+            //go.GetComponent<IResetable>().OnReset();
+            //遍历执行物体中需要重置的逻辑
+            foreach (var item in go.GetComponents<IResetable>())
+            {
+                item.OnReset();
+            }
+            //
             return go;
         }
 
@@ -66,15 +88,28 @@ using System.Collections.Generic;
         /// <param name="key"></param>
         public void Clear(string key)
         {
-            //Destroy 对象
+            //Destroy 对象    倒着删除效率高，安全保证全部删除       
+            for (int i = cache[key].Count-1; i >=0; i--)
+			{
+                Destroy(cache[key][i]);
+			}
             //类别
+                cache.Remove(key);
         }
         /// <summary>
         /// 清空全部
         /// </summary>
         public void ClearAll()
         {
-            
+//             foreach (var key in cache.Keys)//异常：无效操作，foreach最好只读，不用于修改
+//             {
+//                 Clear(key);
+//             }
+
+            foreach (var key in new List<string>(cache.Keys))
+            {
+                Clear(key);
+            }
         }
 
 	}

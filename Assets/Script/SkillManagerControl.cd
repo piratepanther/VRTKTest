@@ -1,32 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SkillSystem.Common.SkillData">
-    <Position X="6.75" Y="2" Width="1.5" />
+  <Comment CommentText="技能管理器">
+    <Position X="6.938" Y="1.466" Height="6.76" Width="1.085" />
+  </Comment>
+  <Comment CommentText="技能释放：各方交互&#xD;&#xA;创建算法  执行算法&#xD;&#xA;------------------------------------------------&#xD;&#xA;技能数据&#xD;&#xA;初始化（创建算法对象）&#xD;&#xA;释放&#xD;&#xA;释放技能&#xD;&#xA;{&#xD;&#xA;	调用选区&#xD;&#xA;	释放效果&#xD;&#xA;}&#xD;&#xA;">
+    <Position X="9.365" Y="7.07" Height="2.365" Width="2.419" />
+  </Comment>
+  <Class Name="SkillSystem.Common.SkillData" Collapsed="true">
+    <Position X="4.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAIABAAiAAEJACIAKAEAAEEARAAQkJAAACAAAA=</HashCode>
       <FileName>Assets\Resources\Common\SkillData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CharacterSkillManager">
-    <Position X="4.25" Y="5" Width="1.5" />
+    <Position X="4.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAACAAAAAAAAAAAAAEIAAACEAAAAAAAAAEAAA=</HashCode>
       <FileName>Assets\Script\SkillSystem\CharacterSkillManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CharacterStatus">
-    <Position X="4.25" Y="1.25" Width="1.5" />
+    <Position X="2" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAIAQJAAAAAAAAAAAECAgAI=</HashCode>
       <FileName>Assets\Character\CharacterStatus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CharacterInputController">
-    <Position X="1.5" Y="4" Width="1.5" />
+    <Position X="2.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAEACAAAAAAAAEAAAAAAAAAAAAIAAAAAAAACAA=</HashCode>
       <FileName>Assets\Character\CharacterInputController.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Common.GameObjectPool" Collapsed="true">
+    <Position X="4.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAABAAAAAAgAAAAAAAgAAABACAABAAAA=</HashCode>
+      <FileName>Assets\Script\Common\GameObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Common.IResetable" Collapsed="true">
+    <Position X="4.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Assets\Script\Common\GameObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Script.Common;
+using Common;
 /// <summary>
 /// 技能管理器
 /// </summary>
@@ -61,11 +62,17 @@ public class CharacterSkillManager : MonoBehaviour
     public void GenerateSkill(SkillData skillData)
     {
         //问题 每一次生成销毁  占用CPU GS资源
-        
+        //问题解决  使用对象池
+
         //创建预制件
-        GameObject skillGo = Instantiate(skillData.skillPrefab, transform.position, transform.rotation);
+        //GameObject skillGo = Instantiate(skillData.skillPrefab, transform.position, transform.rotation);
+        GameObject skillGo = GameObjectPool.instance.CreateObject(skillData.prefabName, skillData.skillPrefab, transform.position, transform.rotation);
+        ////传递技能数据
+        SkillDeployer deployer = skillGo.GetComponent<SkillDeployer>();
+        deployer.SkillData = skillData;
         //销毁技能
-        Destroy(skillGo, skillData.durationTime);
+        //Destroy(skillGo, skillData.durationTime);
+        GameObjectPool.instance.CollectObject(skillGo,skillData.durationTime);
         //冷却技能
         StartCoroutine(CoolTimeDown(skillData));
 

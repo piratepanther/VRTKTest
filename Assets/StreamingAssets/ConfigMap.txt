@@ -1,0 +1,3 @@
+BaseMeleeAttackSkill=Skill/BaseMeleeAttackSkill
+BaseMeleeAttackSkill01=Skill/BaseMeleeAttackSkill01
+BaseMeleeAttackSkill02=Skill/BaseMeleeAttackSkill02
