@@ -27,13 +27,12 @@ public class CharacterSkillManager : MonoBehaviour
 
         /*
          资源映射表
-         * 资源名称                        资源路径
+         *        资源名称                        资源路径
          * BaseMeleeAttackSkill             Skill/BaseMeleeAttackSkill
-        
          */
 
-
-        skillData.skillPrefab = Resources.Load<GameObject>("Skill/" + skillData.prefabName);
+        //skillData.skillPrefab = Resources.Load<GameObject>("Skill/" + skillData.prefabName);
+        skillData.skillPrefab = ResourcesManager.Load<GameObject>(skillData.prefabName);
 
        skillData.owner = gameObject;
 
@@ -61,6 +60,8 @@ public class CharacterSkillManager : MonoBehaviour
     /// </summary>
     public void GenerateSkill(SkillData skillData)
     {
+        //问题 每一次生成销毁  占用CPU GS资源
+        
         //创建预制件
         GameObject skillGo = Instantiate(skillData.skillPrefab, transform.position, transform.rotation);
         //销毁技能
