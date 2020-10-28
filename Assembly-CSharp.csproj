@@ -54,10 +54,19 @@
     <UnityVersion>2020.1.3f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Character\CharacterStatus.cs" />
+    <Compile Include="Assets\Character\EnemyStatus.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\UnityEvents\VRTK_SDKSetup_UnityEvents.cs" />
     <Compile Include="Assets\Script\Common\GameObjectPool.cs" />
     <Compile Include="Assets\Script\Common\ResourcesManager.cs" />
-    <Compile Include="Assets\Script\SkillSystem\SkillDeployer.cs" />
+    <Compile Include="Assets\Script\SkillSystem\Deployer\DeployerConfigFactory.cs" />
+    <Compile Include="Assets\Script\SkillSystem\Deployer\MeleeSkillDeployer.cs" />
+    <Compile Include="Assets\Script\SkillSystem\ImpactEffect\CostSPImpactEffect.cs" />
+    <Compile Include="Assets\Script\SkillSystem\ImpactEffect\DamageImpactEffect.cs" />
+    <Compile Include="Assets\Script\SkillSystem\Selectors\IAttackSelector.cs" />
+    <Compile Include="Assets\Script\SkillSystem\ImpactEffect\IimpactEffect.cs" />
+    <Compile Include="Assets\Script\SkillSystem\Selectors\SectorAttackSelector.cs" />
+    <Compile Include="Assets\Script\SkillSystem\Deployer\SkillDeployer.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\SharedResources\Scripts\VRTKExample_SceneSwitcher.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Ears.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearAnimation.cs" />
@@ -121,7 +130,7 @@
     <Compile Include="Assets\Scenes\Source\SDK\Oculus\SDK_OculusController.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_LoadLevel.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\SDK\VRTK_SDKManager.cs" />
-    <Compile Include="Assets\Resources\Common\SkillData.cs" />
+    <Compile Include="Assets\Script\SkillSystem\SkillCommon\SkillData.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\UnityEvents\VRTK_SnapDropZone_UnityEvents.cs" />
     <Compile Include="Assets\Scenes\Source\SDK\WindowsMR\SDK_WindowsMRController.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\UnityEvents\VRTK_DashTeleport_UnityEvents.cs" />
@@ -141,7 +150,6 @@
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\InputModule.cs" />
     <Compile Include="Assets\VRTK\Prefabs\RadialMenu\VRTK_RadialMenuController.cs" />
     <Compile Include="Assets\VRTK\LegacyExampleFiles\ExampleResources\Scripts\Archery\Follow.cs" />
-    <Compile Include="Assets\Resources\Common\selectorType1.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Internal\VRTK_VRInputModule.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Interactions\Interactables\VRTK_InteractControllerAppearance.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\ObjectFollow\VRTK_TransformFollow.cs" />
@@ -304,7 +312,7 @@
     <Compile Include="Assets\VRTK\Examples\ExampleResources\SharedResources\Prefabs\AnimatedBezierPointer\Scripts\BeamRotator.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Pointers\PointerRenderers\VRTK_StraightPointerRenderer.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Longbow\Scripts\ExplosionWobble.cs" />
-    <Compile Include="Assets\Character\CharacterStatus.cs" />
+    <Compile Include="Assets\Character\PlayerStatus.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\DestroyOnTriggerEnter.cs" />
     <Compile Include="Assets\Script\Common\MonoSingleton.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\ItemPackageSpawner.cs" />
@@ -323,7 +331,7 @@
     <Compile Include="Assets\Script\SkillSystem\CharacterSkillManager.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Presence\VRTK_HeadsetFade.cs" />
     <Compile Include="Assets\Scenes\Source\SDK\VRTK_SDK_Bridge.cs" />
-    <Compile Include="Assets\Resources\Common\SkillAttackType.cs" />
+    <Compile Include="Assets\Script\SkillSystem\SkillCommon\SkillAttackType.cs" />
     <Compile Include="Assets\VRTK\LegacyExampleFiles\ExampleResources\Scripts\PanelMenu\PanelMenuUISlider.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Longbow\Scripts\SoundBowClick.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Controls\3D\VRTK_Control.cs" />
@@ -518,7 +526,7 @@
     <Compile Include="Assets\Scenes\Source\SDK\SteamVR\SDK_SteamVRController.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\UnityEvents\VRTK_ControlAnimationGrabAttach_UnityEvents.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\SceneResources\[005 - Interactions] InteractableObjects\Scripts\TogglePointerInteraction.cs" />
-    <Compile Include="Assets\Resources\Common\SelectorType.cs" />
+    <Compile Include="Assets\Script\SkillSystem\SkillCommon\SelectorType.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Camera.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1133,6 +1141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

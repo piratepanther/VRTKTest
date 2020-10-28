@@ -69,7 +69,11 @@ public class CharacterSkillManager : MonoBehaviour
         GameObject skillGo = GameObjectPool.instance.CreateObject(skillData.prefabName, skillData.skillPrefab, transform.position, transform.rotation);
         ////传递技能数据
         SkillDeployer deployer = skillGo.GetComponent<SkillDeployer>();
-        deployer.SkillData = skillData;
+        deployer.SkillData = skillData;//创建算法对象
+        deployer.DeploySkill();//执行算法对象
+
+
+
         //销毁技能
         //Destroy(skillGo, skillData.durationTime);
         GameObjectPool.instance.CollectObject(skillGo,skillData.durationTime);
@@ -91,8 +95,8 @@ public class CharacterSkillManager : MonoBehaviour
         }
     }
 
-    public static implicit operator CharacterSkillManager(SkillData v)
-    {
-        throw new NotImplementedException();
-    }
+//     public static implicit operator CharacterSkillManager(SkillData v)
+//     {
+//         throw new NotImplementedException();
+//     }
 }

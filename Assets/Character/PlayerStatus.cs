@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [Serializable]
-public class CharacterStatus : MonoBehaviour
+public class PlayerStatus : MonoBehaviour
 {
     [Tooltip("动画参数")]
     public CharacterAnimationParameter chParams;
@@ -26,28 +26,5 @@ public class CharacterStatus : MonoBehaviour
     public float attacklnterval;
     [Tooltip("攻击距离")]
     public float attackDistance;
-
-    protected void Start()
-    {
-
-    }
-    public void Damage(float val)
-    {
-        val -= defence;
-        if (HP - val > 0)
-        {
-            HP -= val;
-        }
-        else
-        {
-            Death();
-        }
-        
-    }
-
-    private void Death()
-    {
-        GetComponentInChildren<Animator>().SetBool(chParams.Death, true);
-    }
 
 }

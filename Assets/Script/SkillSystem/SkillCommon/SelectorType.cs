@@ -5,6 +5,6 @@ namespace SkillSystem.Common
     public enum SelectorType
     {
         // public string[] selectorType ={"Sector", "Rectangle"};
-        Section, Rectangle
+        Sector, Rectangle
     }
 }
