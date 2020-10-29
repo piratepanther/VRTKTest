@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using SkillSystem.Common;
-using Assets.Script.Common;
 
 
-namespace Assets.Script.SkillSystem
+
+namespace Assets.Script.Common
 {
     class SectorAttackSelector:IAttackSelector
     {

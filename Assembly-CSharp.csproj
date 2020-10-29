@@ -54,6 +54,7 @@
     <UnityVersion>2020.1.3f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Character\CharacterSelected.cs" />
     <Compile Include="Assets\Character\CharacterStatus.cs" />
     <Compile Include="Assets\Character\EnemyStatus.cs" />
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\UnityEvents\VRTK_SDKSetup_UnityEvents.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Script\SkillSystem\ImpactEffect\IimpactEffect.cs" />
     <Compile Include="Assets\Script\SkillSystem\Selectors\SectorAttackSelector.cs" />
     <Compile Include="Assets\Script\SkillSystem\Deployer\SkillDeployer.cs" />
+    <Compile Include="Assets\Script\SkillSystem\SkillCommon\CharacterSkillSystem.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\SharedResources\Scripts\VRTKExample_SceneSwitcher.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Ears.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearAnimation.cs" />

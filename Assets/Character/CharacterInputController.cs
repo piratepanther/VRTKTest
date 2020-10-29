@@ -4,15 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Common;
 
 public class CharacterInputController : MonoBehaviour
 {
     private Button[] skillButtons;
+    private CharacterSkillSystem skillSystem;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         skillButtons = GetComponents<Button>();
+        skillSystem = GetComponent<CharacterSkillSystem>();
 
     }
     private void OnEnable()
@@ -34,12 +37,14 @@ public class CharacterInputController : MonoBehaviour
     
     private void OnSkillButtonDown()
     {
-        CharacterSkillManager SkillManager = GetComponent<CharacterSkillManager>();
-        SkillData data = SkillManager.PrepareSkill(1002);
-        if (data != null)
-        {
-            SkillManager.GenerateSkill(data);
-        }
+//         CharacterSkillManager SkillManager = GetComponent<CharacterSkillManager>();
+//         SkillData data = SkillManager.PrepareSkill(1002);
+//         if (data != null)
+//         {
+//             SkillManager.GenerateSkill(data);
+//         }
+        int id = 1002;
+        skillSystem.AttackUseSkill(id);
     }
 
     private void OnDisable()
