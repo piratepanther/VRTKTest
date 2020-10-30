@@ -15,9 +15,11 @@ namespace Assets.Script.SkillSystem
         public void Execute(SkillDeployer skillDeployer)
         {
             skilldata = skillDeployer.SkillData;
-            skillDeployer.StartCoroutine(RepeatDamage());
+            skillDeployer.StartCoroutine(RepeatDamage(skillDeployer));
         }
+
         //重复伤害
+        //private IEnumerator RepeatDamage(SkillDeployer skillDeployer)
         private IEnumerator RepeatDamage(SkillDeployer skillDeployer)
         {
             float atkTime=0;

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+
+using UnityEngine.UI;
 using System.Collections;
 
 public class CharacterSelected : MonoBehaviour
@@ -7,7 +9,7 @@ public class CharacterSelected : MonoBehaviour
     public string selectedName = "";//选择器游戏物体名称
     private float hideTime=0;
     private float displayTime=3;
-    [Tooltip("选择器游戏物体名称")]
+    //[Tooltip("选择器游戏物体名称")]
     private void start()
     {
         selectedGO = transform.Find(selectedName).gameObject;

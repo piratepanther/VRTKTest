@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using SkillSystem.Common;
-
+using Assets.Script.SkillSystem;
 
 
 namespace Assets.Script.Common

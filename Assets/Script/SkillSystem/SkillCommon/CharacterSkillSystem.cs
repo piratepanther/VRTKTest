@@ -5,9 +5,9 @@ using SkillSystem.Common;
 using Assets.Script.Common;
 namespace Common
 {
+    [RequireComponent(typeof(CharacterSkillManager))]
 	public class CharacterSkillSystem : MonoBehaviour
 	{
-        [RequireComponent(typeof(CharacterSkillManager))]
         private CharacterSkillManager skillManager;
         private Animator animator;
         private SkillData skillData;
