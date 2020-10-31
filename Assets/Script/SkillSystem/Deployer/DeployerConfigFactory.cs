@@ -9,6 +9,13 @@ namespace Assets.Script.SkillSystem
 {
     class DeployerConfigFactory
     {
+        private static Dictionary<string,object> cache;
+
+        static DeployerConfigFactory()
+        {
+            cache = new Dictionary<string,object>();
+        }
+        
         //命名规则：SkillSystem.Common.+枚举名AttackSelector
         public static IAttackSelector CreatAttackSelector(SkillData skillData)
         {
@@ -31,8 +38,13 @@ namespace Assets.Script.SkillSystem
 
         private static T CreatObject<T>(string className) where T : class
         {
-            Type type = Type.GetType(className);
-            return Activator.CreateInstance(type) as T;
+            if (!cache.ContainsKey(className))
+            {
+                Type type = Type.GetType(className);
+                object instance = Activator.CreateInstance(type);
+                cache.Add(className, instance);
+            }
+            return cache[className] as T;
         }
 
     }
