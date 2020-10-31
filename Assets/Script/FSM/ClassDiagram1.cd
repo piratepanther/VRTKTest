@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assets.Script.FSM.FSMBase">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUQAAAAAQCAAgAAAIAAAAAAEAAAABAAEAQAIAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM\FSMBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM.FSMState">
+    <Position X="6" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FSMState" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAAAAAAMIgAAAAAAAQCAAAAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM\FSMState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM.FSMTrigger">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FSMTrigger" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM\FSMTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM.IdleState" Collapsed="true">
+    <Position X="5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM\states\IdleState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM.states.DeadState" Collapsed="true">
+    <Position X="7" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM\states\DeadState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM.NoHealthTrigger" Collapsed="true">
+    <Position X="3.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM\Triggers\NoHealthTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
