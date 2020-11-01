@@ -11,10 +11,10 @@ namespace Assets.Script.SkillSystem
 {
     class DamageImpactEffect:IimpactEffect
     {
-        private SkillData skilldata;
+        //private SkillData skilldata;
         public void Execute(SkillDeployer skillDeployer)
         {
-            skilldata = skillDeployer.SkillData;
+            //skilldata = skillDeployer.SkillData;
             skillDeployer.StartCoroutine(RepeatDamage(skillDeployer));
         }
 
@@ -25,21 +25,21 @@ namespace Assets.Script.SkillSystem
             float atkTime=0;
             do 
             {
-                OnceDamage();
-                yield return new WaitForSeconds(skilldata.atkInterval);
-                atkTime+=skilldata.atkInterval;
+                OnceDamage(skillDeployer.SkillData);
+                yield return new WaitForSeconds(skillDeployer.SkillData.atkInterval);
+                atkTime+= skillDeployer.SkillData.atkInterval;
                 skillDeployer.CalculateTarget();//重新计算目标
-            } while (atkTime<skilldata.durationTime);
+            } while (atkTime< skillDeployer.SkillData.durationTime);
 
 
         }
         //单次伤害
-        private void OnceDamage()
+        private void OnceDamage(SkillData skillData)
         {
-            for (int i = 0; i < skilldata.attackTargets.Length; i++)
+            for (int i = 0; i < skillData.attackTargets.Length; i++)
             {
-                float atk = skilldata.atkRatio*skilldata.owner.GetComponent<PlayerStatus>().baseATK;
-                var status = skilldata.attackTargets[i].GetComponent<CharacterStatus>();
+                float atk = skillData.atkRatio* skillData.owner.GetComponent<PlayerStatus>().baseATK;
+                var status = skillData.attackTargets[i].GetComponent<CharacterStatus>();
                 status.Damage(atk);
           
             }

@@ -10,12 +10,16 @@ public class CharacterInputController : MonoBehaviour
 {
     private Button[] skillButtons;
     private CharacterSkillSystem skillSystem;
+    private Animator anim;
+    private PlayerStatus status;
 
     // Start is called before the first frame update
     void Awake()
     {
         skillButtons = GetComponents<Button>();
         skillSystem = GetComponent<CharacterSkillSystem>();
+        anim = GetComponentInChildren<Animator>();
+        status = GetComponent<PlayerStatus>();
 
     }
     private void OnEnable()
@@ -37,12 +41,16 @@ public class CharacterInputController : MonoBehaviour
     
     private void OnSkillButtonDown()
     {
-//         CharacterSkillManager SkillManager = GetComponent<CharacterSkillManager>();
-//         SkillData data = SkillManager.PrepareSkill(1002);
-//         if (data != null)
-//         {
-//             SkillManager.GenerateSkill(data);
-//         }
+        //         CharacterSkillManager SkillManager = GetComponent<CharacterSkillManager>();
+        //         SkillData data = SkillManager.PrepareSkill(1002);
+        //         if (data != null)
+        //         {
+        //             SkillManager.GenerateSkill(data);
+        //         }
+        
+        //1.如果正在攻击则退出
+        if (IsAttacking()) return;
+        //2.队列queue
         int id = 1002;
         skillSystem.AttackUseSkill(id);
     }
@@ -59,6 +67,10 @@ public class CharacterInputController : MonoBehaviour
         }
         
     }
-
+    private bool IsAttacking()
+    {
+       return anim.GetBool(status.chParams.Attack01) || anim.GetBool(status.chParams.Attack02) ||
+            anim.GetBool(status.chParams.Attack03);
+    }
 
 }

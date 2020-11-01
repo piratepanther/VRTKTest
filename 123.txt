@@ -8,6 +8,15 @@ FSM有限状态机，与攻击有少许联系（游戏AI）策划一边测试，
 FSMTrigger父类，FSMState父类，FSMBase状态机。状态机调用父类方法
 子类实现实现父类完成动态绑定。
 
+--20201101--
+20201030的两个问题
+解决方案：1.删除DamageImpact中的skilldata。2.动作队列（动作较多时）；
+去除无效技能的方法。在CharacterInputController.OnSkillButtonDown
+中判断如果正在攻击则退出。
+状态机调用技能系统，实现自动随机攻击。
+
+
+
 
 
 
