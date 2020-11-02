@@ -15,6 +15,9 @@ FSMTrigger父类，FSMState父类，FSMBase状态机。状态机调用父类方�
 中判断如果正在攻击则退出。
 状态机调用技能系统，实现自动随机攻击。
 
+--20201102--
+完成PatrollingState三种巡逻功能；AIConfigurationReader，AIConfigurationReaderFactory
+动态创建List<FSMState>()以及FSMState.AddMap(triggerID, stateID)
 
 
 
@@ -29,4 +32,4 @@ FSMTrigger父类，FSMState父类，FSMBase状态机。状态机调用父类方�
 
 
 
-�
+�

@@ -60,6 +60,9 @@ namespace Assets.Script.FSM
         //[SerializeField]//将私有字段在编译器中显示
         private FSMState currentState;
         private FSMState defaultState;
+        [Tooltip("当前状态机配置文件")]
+        public string fileName="AI_01.txt";
+
         [HideInInspector]
         public CharacterSkillSystem skillSystem;
         [Tooltip("路点")]
@@ -83,33 +86,57 @@ namespace Assets.Script.FSM
         private void ConfigFSM()
         {
             states = new List<FSMState>();
-            //--创建状态对象(反射)
-            IdleState Idle = new IdleState();
-            //--设置状态（AddMap）
-            Idle.AddMap(FSMTriggerID.NoHealth,FSMStateID.Dead);
-            Idle.AddMap(FSMTriggerID.SawTarget, FSMStateID.Pursuit);
-            states.Add(Idle);
+            var map = AIConfigurationReaderFactory.GetMap(fileName);
 
-            //--创建状态对象
-            DeadState dead = new DeadState();
-            //--设置状态（AddMap
-            states.Add(dead);
-
-            PursuitState pursuit = new PursuitState();            
-            pursuit.AddMap(FSMTriggerID.NoHealth, FSMStateID.Dead);
-            pursuit.AddMap(FSMTriggerID.ReachTarget, FSMStateID.Attacking);
-            pursuit.AddMap(FSMTriggerID.LoseTarget, FSMStateID.Default);
-            states.Add(pursuit);
-
-            AttackingState attacking = new AttackingState();
-            attacking.AddMap(FSMTriggerID.NoHealth, FSMStateID.Dead);
-            attacking.AddMap(FSMTriggerID.withoutAttackRange, FSMStateID.Pursuit);
-            attacking.AddMap(FSMTriggerID.killedTarget, FSMStateID.Default);
-            states.Add(attacking);
+            foreach (var state in map)
+            {
+                Type type = Type.GetType("Assets.Script.FSM." + state.Key + "State");
+                FSMState stateObj = Activator.CreateInstance(type) as FSMState;
+                states.Add(stateObj);
+                foreach (var dic in state.Value)
+                {
+                    FSMTriggerID triggerID = (FSMTriggerID)Enum.Parse(typeof(FSMTriggerID),dic.Key);
+                    FSMStateID stateID = (FSMStateID)Enum.Parse(typeof(FSMStateID), dic.Value);
+                    stateObj.AddMap(triggerID, stateID);
+                }
+            }
 
         }
 
-        
+//         private void ConfigFSM()//硬编码
+//         {
+//             states = new List<FSMState>();
+//             //--创建状态对象(反射)
+//             IdleState Idle = new IdleState();
+//             //--设置状态（AddMap）
+//             Idle.AddMap(FSMTriggerID.NoHealth, FSMStateID.Dead);
+//             Idle.AddMap(FSMTriggerID.SawTarget, FSMStateID.Pursuit);
+//             states.Add(Idle);
+// 
+//             //--创建状态对象
+//             DeadState dead = new DeadState();
+//             //--设置状态（AddMap
+//             states.Add(dead);
+// 
+//             PursuitState pursuit = new PursuitState();
+//             pursuit.AddMap(FSMTriggerID.NoHealth, FSMStateID.Dead);
+//             pursuit.AddMap(FSMTriggerID.ReachTarget, FSMStateID.Attacking);
+//             pursuit.AddMap(FSMTriggerID.LoseTarget, FSMStateID.Default);
+//             states.Add(pursuit);
+// 
+//             AttackingState attacking = new AttackingState();
+//             attacking.AddMap(FSMTriggerID.NoHealth, FSMStateID.Dead);
+//             attacking.AddMap(FSMTriggerID.withoutAttackRange, FSMStateID.Pursuit);
+//             attacking.AddMap(FSMTriggerID.killedTarget, FSMStateID.Default);
+//             states.Add(attacking);
+// 
+//             PatrollingState patrolling = new PatrollingState();
+//             patrolling.AddMap(FSMTriggerID.NoHealth, FSMStateID.Dead);
+//             patrolling.AddMap(FSMTriggerID.SawTarget, FSMStateID.Pursuit);
+//             patrolling.AddMap(FSMTriggerID.CompletePatrol, FSMStateID.Idel);
+//             states.Add(patrolling);
+// 
+//         }
 
 
         //切换状态

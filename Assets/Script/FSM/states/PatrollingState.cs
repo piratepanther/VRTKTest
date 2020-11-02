@@ -18,6 +18,7 @@ namespace Assets.Script.FSM
         {
             base.EnterState(fsm);
             fsm.IspatrolComplete = false;
+            fsm.anim.SetBool(fsm.chStates.chParams.Walk, true);
         }
 
         public override void ActionState(FSMBase fsm)
@@ -38,18 +39,50 @@ namespace Assets.Script.FSM
 
         }
 
-        public int index;
-        //根据巡逻模式ABC都是数据，应在机里面找
-            //--往返 A=B=C=B=A.....
-        private void PingPongPatrolling(FSMBase fsm)
+        public override void ExitState(FSMBase fsm)
         {
-            throw new NotImplementedException();
+            base.ExitState(fsm);
+            fsm.anim.SetBool(fsm.chStates.chParams.Walk, false);
         }
 
-            //--循环 A=B=C=A.....
+        public int index;
+        //根据巡逻模式ABC都是数据，应在机里面找
+        //--往返 A=B=C=B=A.....
+        private void PingPongPatrolling(FSMBase fsm)
+        {
+            if (Vector3.Distance(fsm.transform.position, fsm.wayPoints[index].position) < 0.5f)
+            {
+                if (index == fsm.wayPoints.Length - 1)
+                {
+                    Array.Reverse(fsm.wayPoints);
+                    index++;
+                }
+                
+                index = (index + 1) % fsm.wayPoints.Length;
+
+
+            }
+            fsm.MoveToTarget(fsm.wayPoints[index].position, 0, fsm.walkSpeed);
+
+
+        }
+
+        //--循环 A=B=C=A.....
         private void LoopPatrolling(FSMBase fsm)
         {
-            throw new NotImplementedException();
+            if (Vector3.Distance(fsm.transform.position, fsm.wayPoints[index].position) < 0.5f)
+            {                
+//                 if (index == fsm.wayPoints.Length - 1)
+//                 {
+// 
+//                     index--;
+//                 }
+//                 index ++;
+                index = (index + 1) % fsm.wayPoints.Length;
+
+
+            }
+            fsm.MoveToTarget(fsm.wayPoints[index].position, 0, fsm.walkSpeed);
         }
 
             //--单次 A-B-C
