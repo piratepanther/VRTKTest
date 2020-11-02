@@ -11,8 +11,9 @@ namespace Assets.Script.Common
     class ResourcesManager
     {
         private static Dictionary<string, string> configMap;
-
-        static ResourcesManager(string fileName="ConfigMap.txt")
+        //string fileName = "ConfigMap.txt";
+        private ResourcesManager(string fileName="ConfigMap.txt")
+        //static ResourcesManager()
         {
             string fileContent = GetConfigFile(fileName);
             BuildMap(fileContent);

@@ -3,14 +3,21 @@ using System.Collections;
 using Assets.Script.Common;
 using SkillSystem.Common;
 using Assets.Script.Common;
+using System.Collections.Generic;
+
 namespace Common
 {
+    [RequireComponent(typeof(CharacterSkillManager))]
 	public class CharacterSkillSystem : MonoBehaviour
 	{
-        [RequireComponent(typeof(CharacterSkillManager))]
         private CharacterSkillManager skillManager;
         private Animator animator;
+        //动作队列（技能多的形况下用队列）
+        //private Queue<SkillData> skillData;
+
+        //在此先不用，使用忽略操作。
         private SkillData skillData;
+        [HideInInspector]
         public Transform selectedTarget;
         private void start()
         {
@@ -34,7 +41,7 @@ namespace Common
             skillData = skillManager.PrepareSkill(skillID);
             if (skillData == null) return;
 
-        //播放动画
+        //播放动画（圆形动画...普攻...生成原型（普攻）技能）
             animator.SetBool(skillData.animationName, true);
 
         //生成技能 DeploySkill()//动画播放自动委托释放

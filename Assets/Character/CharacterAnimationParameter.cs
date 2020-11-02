@@ -6,5 +6,6 @@
     public string Attack02;
     public string Attack03;
     public string Walk;
+    public string run;
 
 }
