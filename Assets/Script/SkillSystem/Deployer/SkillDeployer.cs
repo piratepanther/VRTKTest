@@ -60,14 +60,9 @@ namespace Common
 
             }
 
-
-
         }       
         //释放方式
         public abstract void DeploySkill();//由子类实现，定义具体释放策略
-
-
-
-	    
+        	    
 	}
 }

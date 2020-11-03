@@ -73,7 +73,10 @@ namespace Common
 
         public void CollectObject(GameObject go,float delay=0)
         {
-            StartCoroutine(CollectObjectDelay(go, delay));
+            if (delay == 0)
+                go.SetActive(false);
+            else           
+                StartCoroutine(CollectObjectDelay(go, delay));
         }
 
 

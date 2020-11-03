@@ -19,6 +19,23 @@ FSMTrigger父类，FSMState父类，FSMBase状态机。状态机调用父类方�
 完成PatrollingState三种巡逻功能；AIConfigurationReader，AIConfigurationReaderFactory
 动态创建List<FSMState>()以及FSMState.AddMap(triggerID, stateID)
 
+--20201103--
+1.实现玩家攻击敌人（角色系统）
+        --枪将攻击力传递给子弹(通过枪传递)
+        --玩家子弹到达目标时根据部位伤害敌人
+2.public event EventHandler<BulletArrivedEventArgs> ArrivedTargetPoint;
+消息到达（事件源）
+        1.定义事件参数类
+        2.定义委托数据类型（也可以使用泛型委托）
+        EventHandler(object sender,TEventArgs e)
+        Action<BulletArrivedEventArgs>
+        3.声明事件
+        4.引发事件
+        ----------------------
+        5.注册事件
+
+
+
 
 
 
