@@ -48,11 +48,19 @@ namespace Assets.Script.Weapon
 	        }
 	        controller.TriggerPressed -= OnTriggerPressed;
 	    }
+
+        [Tooltip("最小发射间隔")]
+        public float minFireInterval=0.5f;//可以放在枪上，比fire动画时间长才行
+        private float lastPressedTime;
 	
 	    private void OnTriggerPressed(object sender, ControllerInteractionEventArgs e)
 	    {
-	        /*throw new System.NotImplementedException();*/
+	        if(Time.time-lastPressedTime<minFireInterval)return;            
+            
+            /*throw new System.NotImplementedException();*/
             anim.SetBool(gunAction.fireAnimName, true);
+
+            lastPressedTime=Time.time;
 
 	    }
 	    

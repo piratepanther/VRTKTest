@@ -31,7 +31,8 @@ namespace Assets.Script.Weapon
 
 	    public void Damage(float val)
 	    {
-	        val -= defence;
+            if (HP <= 0) return;
+            val -= defence;
 	        if (HP - val > 0)
 	        {
 	            HP -= val;
