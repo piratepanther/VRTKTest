@@ -12,7 +12,7 @@ namespace Assets.Script.FSM
         //数据结构：
         //大字典key状态      value映射
         //小字典key条件编号  value状态编号
-        public Dictionary<string,Dictionary<string,string>> map{get;private set;};
+        public Dictionary<string,Dictionary<string,string>> map{get;private set;}
 
         public AIConfigurationReader(string fileName)
         {

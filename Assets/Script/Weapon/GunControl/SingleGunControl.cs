@@ -7,7 +7,7 @@ using Common;
 
 namespace Assets.Script.Weapon
 {
-    [RequireComponent(typeof(Gun)]
+    [RequireComponent(typeof(Gun))]
 	public class SingleGunControl : MonoBehaviour
 	{
 	    private VRTK_ControllerEvents controller;

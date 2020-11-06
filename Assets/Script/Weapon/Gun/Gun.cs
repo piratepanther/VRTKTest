@@ -9,7 +9,7 @@ using Common;
 
 namespace Assets.Script.Weapon
 {
-    [RequireComponent(typeof(MuzzleFlash)]
+    [RequireComponent(typeof(MuzzleFlash))]
     public class Gun:MonoBehaviour
     {
         private GameObject bulletPrefab;

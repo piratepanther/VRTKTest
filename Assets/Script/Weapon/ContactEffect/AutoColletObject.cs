@@ -13,7 +13,7 @@ namespace Assets.Script.Weapon
 	    
 	    private void Start()
 	    {
-	        GameObjectPool.instance.CollectObject(gameObject,delayTime)
+			GameObjectPool.instance.CollectObject(gameObject, delayTime);
 	
 	
 	    }

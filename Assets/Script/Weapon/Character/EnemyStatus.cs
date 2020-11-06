@@ -16,7 +16,7 @@ namespace Assets.Script.Weapon
 
         protected override void Death()
         {
-            GetComponentInChildren<Animator>().SetBool(chParams.Death, true)
+            GetComponentInChildren<Animator>().SetBool(chParams.Death, true);
             //Destroy(gameObject, 10);
             GameObjectPool.instance.CollectObject(gameObject,10);
         }
