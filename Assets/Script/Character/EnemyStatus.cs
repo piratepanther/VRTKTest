@@ -8,6 +8,9 @@ using UnityEngine.UI;
 [Serializable]
 public class EnemyStatus : CharacterStatus
 {
- 
+    [Tooltip("攻击间际")]
+    public new float attacklnterval=5;
+
+
 
 }

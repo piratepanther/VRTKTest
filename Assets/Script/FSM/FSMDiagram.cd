@@ -18,14 +18,15 @@
       <FileName>Assets\Script\FSM\FSMState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Assets.Script.FSM.FSMTrigger">
+  <Class Name="Assets.Script.FSM2.FSMTrigger">
     <Position X="3.5" Y="5" Width="1.5" />
     <Members>
       <Method Name="FSMTrigger" Hidden="true" />
     </Members>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAACAAAAAAA=</HashCode>
-      <FileName>Assets\Script\FSM\FSMTrigger.cs</FileName>
+      <FileName>Assets\Script\FSM2\FSMTrigger.cs</FileName>
+      <NewMemberFileName>Assets\Script\FSM\FSMTrigger.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Script.FSM.IdleState" Collapsed="true">

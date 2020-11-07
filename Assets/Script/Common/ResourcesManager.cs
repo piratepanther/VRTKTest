@@ -90,6 +90,9 @@ namespace Assets.Script.Common
         public static T Load<T>(string prefabName) where T:UnityEngine.Object
         {
             //prefabName=>prefabPath
+            
+            if (!configMap.ContainsKey(prefabName)) return null;
+
             string prefabPath = configMap[prefabName];
 
             return Resources.Load<T>("prefabPath");

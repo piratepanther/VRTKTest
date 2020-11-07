@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Script.FSM.states
+namespace Assets.Script.FSM
 {
     class DeadState : FSMState
     {

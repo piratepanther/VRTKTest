@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assets.Script.FSM2.FSMState" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAAAAAAMIgAAAAAAAQCAAAAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\FSMState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.FSMBase">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAABFAwCgAgBAAIAABAgAEAAAADEAEAUAKAAAAAAI=</HashCode>
+      <FileName>Assets\Script\FSM2\FSMBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.FSMTrigger" Collapsed="true">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\FSMTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.AttackingState" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAIAAASAAAAAQAAAAAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\states\AttackingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.DeadState" Collapsed="true">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\states\DeadState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.IdleState" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\states\IdleState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.PathfindingState" Collapsed="true">
+    <Position X="6.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAICAAABAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\states\PathfindingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.CompletePathfindingTrigger" Collapsed="true">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\Triggers\CompletePathfindinglTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.KilledTargetTrigger" Collapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\Triggers\killedTargetTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Script.FSM2.NoHealthTrigger" Collapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Script\FSM2\Triggers\NoHealthTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

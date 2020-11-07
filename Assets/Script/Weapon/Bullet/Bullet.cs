@@ -54,13 +54,16 @@ namespace Assets.Script.Weapon
         protected virtual void ArriveTargetPoint()
         {
 
-            if(ArrivedTargetPoint==null)return;
-
-            BulletArrivedEventArgs args = new BulletArrivedEventArgs() 
+            if (ArrivedTargetPoint != null)
             {
-                Hit=hit
-            };
-            ArrivedTargetPoint(this, args);
+                BulletArrivedEventArgs args = new BulletArrivedEventArgs() 
+                {
+                    Hit=hit
+                };
+                ArrivedTargetPoint(this, args);
+
+            }
+
 
             GameObjectPool.instance.CollectObject(gameObject);
         }         

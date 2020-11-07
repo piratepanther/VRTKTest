@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{20F038A6-1B09-EE82-AD37-043C7B4D6F3D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -57,6 +58,22 @@
   <ItemGroup>
     <Compile Include="Assets\Scenes\Source\Scripts\Utilities\UnityEvents\VRTK_SDKSetup_UnityEvents.cs" />
     <Compile Include="Assets\Script\Common\GameObjectPool.cs" />
+    <Compile Include="Assets\Script\FSM2\Common\AIConfigurationReader.cs" />
+    <Compile Include="Assets\Script\FSM2\Common\AIConfigurationReaderFactory.cs" />
+    <Compile Include="Assets\Script\FSM2\Common\FSMStateID.cs" />
+    <Compile Include="Assets\Script\FSM2\Common\FSMTriggerID.cs" />
+    <Compile Include="Assets\Script\FSM2\Common\PatrolMode.cs" />
+    <Compile Include="Assets\Script\FSM2\FSMBase.cs" />
+    <Compile Include="Assets\Script\FSM2\FSMState.cs" />
+    <Compile Include="Assets\Script\FSM2\FSMTrigger.cs" />
+    <Compile Include="Assets\Script\FSM2\states\AttackingState.cs" />
+    <Compile Include="Assets\Script\FSM2\states\DeadState.cs" />
+    <Compile Include="Assets\Script\FSM2\states\IdleState.cs" />
+    <Compile Include="Assets\Script\FSM2\states\PathfindingState.cs" />
+    <Compile Include="Assets\Script\FSM2\Triggers\CompletePathfindinglTrigger.cs" />
+    <Compile Include="Assets\Script\FSM2\Triggers\killedTargetTrigger.cs" />
+    <Compile Include="Assets\Script\FSM2\Triggers\NoHealthTrigger.cs" />
+    <Compile Include="Assets\Script\Weapon\Bullet\EnemyBullet.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\SharedResources\Scripts\VRTKExample_SceneSwitcher.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Ears.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearAnimation.cs" />
@@ -565,30 +582,31 @@
     <Compile Include="Assets\Script\SkillSystem\ImpactEffect\CostSPImpactEffect.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\Script\FSM\FSMDiagram.cd" />
-     <None Include="Assets\Script\UI\FrameWork\UIManager.cd" />
-     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
-     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
-     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
-     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
-     <None Include="Assets\SteamVR\readme.txt" />
-     <None Include="Assets\StreamingAssets\AI_01.txt" />
-     <None Include="Assets\Script\Weapon\WeaponDiagram.cd" />
-     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
-     <None Include="Assets\VRTK\Documentation.txt" />
-     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
-     <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
-     <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\VRTK_TunnelEffect.shader" />
-     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
-     <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
-     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
-     <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
-     <None Include="Assets\StreamingAssets\ConfigMap.txt" />
-     <None Include="Assets\Script\SkillManagerControl.cd" />
-     <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\UIOverlay.shader" />
-     <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
-     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
-     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
+    <None Include="Assets\Script\FSM2\FSM2Diagram1.cd" />
+    <None Include="Assets\Script\FSM\FSMDiagram.cd" />
+    <None Include="Assets\Script\UI\FrameWork\UIManager.cd" />
+    <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
+    <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
+    <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
+    <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
+    <None Include="Assets\SteamVR\readme.txt" />
+    <None Include="Assets\StreamingAssets\AI_01.txt" />
+    <None Include="Assets\Script\Weapon\WeaponDiagram.cd" />
+    <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
+    <None Include="Assets\VRTK\Documentation.txt" />
+    <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
+    <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
+    <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\VRTK_TunnelEffect.shader" />
+    <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
+    <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
+    <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
+    <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
+    <None Include="Assets\StreamingAssets\ConfigMap.txt" />
+    <None Include="Assets\Script\SkillManagerControl.cd" />
+    <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\UIOverlay.shader" />
+    <None Include="Assets\Scenes\Source\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
+    <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
+    <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <Reference Include="UnityEngine">
       <HintPath>F:\unity3D\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -1173,6 +1191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\StreamingAssets\AI_02.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
