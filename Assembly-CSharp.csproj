@@ -63,9 +63,12 @@
     <Compile Include="Assets\Script\FSM2\Common\FSMStateID.cs" />
     <Compile Include="Assets\Script\FSM2\Common\FSMTriggerID.cs" />
     <Compile Include="Assets\Script\FSM2\Common\PatrolMode.cs" />
+    <Compile Include="Assets\Script\FSM2\SpawnSystemFile\EnemySpawn.cs" />
     <Compile Include="Assets\Script\FSM2\FSMBase.cs" />
     <Compile Include="Assets\Script\FSM2\FSMState.cs" />
     <Compile Include="Assets\Script\FSM2\FSMTrigger.cs" />
+    <Compile Include="Assets\Script\FSM2\SpawnSystemFile\SpawnSystem.cs" />
+    <Compile Include="Assets\Script\FSM2\SpawnSystemFile\SpawnTrigger.cs" />
     <Compile Include="Assets\Script\FSM2\states\AttackingState.cs" />
     <Compile Include="Assets\Script\FSM2\states\DeadState.cs" />
     <Compile Include="Assets\Script\FSM2\states\IdleState.cs" />

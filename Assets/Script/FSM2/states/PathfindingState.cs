@@ -36,7 +36,7 @@ namespace Assets.Script.FSM2
 //                     PingPongPatrolling(fsm);
 //                     break;
 //             }
-            if (Vector3.Distance(fsm.transform.position, fsm.wayPoints[index].position) < 0.5f)
+            if (Vector3.Distance(fsm.transform.position, fsm.wayPoints[index]) < 0.5f)
             {
                 if (index == fsm.wayPoints.Length - 1)
                 {
@@ -49,9 +49,9 @@ namespace Assets.Script.FSM2
             }
             //fsm.wayPoints[2].position;
             // fsm.MoveToTarget(fsm.wayPoints[index].position,0,fsm.walkSpeed);
-            fsm.transform.position = Vector3.MoveTowards(fsm.transform.position, fsm.wayPoints[index].position,Time.deltaTime*fsm.runSpeed);
+            fsm.transform.position = Vector3.MoveTowards(fsm.transform.position, fsm.wayPoints[index],Time.deltaTime*fsm.runSpeed);
             //fsm.transform.LookAt(fsm.wayPoints[index].position);
-            fsm.transform.LookAtPosition(fsm.wayPoints[index].position, fsm.rotateSpeed);
+            fsm.transform.LookAtPosition(fsm.wayPoints[index], fsm.rotateSpeed);
 
         }
 

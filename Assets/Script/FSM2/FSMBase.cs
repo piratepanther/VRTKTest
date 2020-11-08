@@ -64,7 +64,7 @@ namespace Assets.Script.FSM2
         [HideInInspector]
         public CharacterSkillSystem skillSystem;
         [Tooltip("路点")]
-        public Transform[] wayPoints;
+        public Vector3[] wayPoints;
        
         [HideInInspector]
         public bool IsPathFindingComplete;

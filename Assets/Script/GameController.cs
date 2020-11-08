@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VR.UGUI.FrameWork;
 using VR.UGUI;
+using Assets.Script.FSM2.SpawnSystem;
 
 public class GameController : MonoSingleton<GameController>
 {
@@ -16,6 +17,9 @@ public class GameController : MonoSingleton<GameController>
     public void GameStart()
     {
         UIManager.instance.GetWindow<UIMainWindow>().SetVisible(false);
+        //激活生成器
+        SpawnSystem.instance.ActivateNextSpawn();
+
     }
 
     //游戏结束
