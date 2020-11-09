@@ -95,7 +95,7 @@ namespace Assets.Script.Common
 
             string prefabPath = configMap[prefabName];
 
-            return Resources.Load<T>("prefabPath");
+            return Resources.Load<T>(prefabPath);
         }
 
     }
